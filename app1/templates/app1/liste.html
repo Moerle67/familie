@@ -1,0 +1,14 @@
+{% extends 'app1/vorlage.html' %}
+
+{% block h1 %}{{h1}}{% endblock h1 %}
+
+{% block contents %}
+<ul>
+{% for element in liste %}
+    <li><a href="{{vors}}/{{element.pk}}" target="_blank">{{element}}</a></li>
+{% endfor %}
+</ul>
+{% endblock contents %}
+
+
+

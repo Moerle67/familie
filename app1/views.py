@@ -25,9 +25,20 @@ def mutter(request, id):
 def familie(request):
     liste_kinder = Kind.objects.all()
     contents = {
-        'liste_kinder': liste_kinder,
+        'liste': liste_kinder,
+        'vors': 'kind',
+        'h1': 'Liste der Kinder',
     }
-    return render(request, 'app1/temp1.html', contents)
+    return render(request, 'app1/liste.html', contents)
+
+def muetter(request):
+    liste = Mutter.objects.all()
+    contents = {
+        'liste': liste,
+        'vors': 'mutter',
+        'h1': 'Liste der Mütter',
+    }
+    return render(request, 'app1/liste.html', contents)
     
 def kind_detail(request, name):
     kind = Kind.objects.get(pk=name)

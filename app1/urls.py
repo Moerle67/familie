@@ -9,5 +9,6 @@ urlpatterns = [
     path('apfelbaum/<str:name>/<int:number>', views.apfelbaum_n, name="apfelbaum"),
     path('mutter/<int:id>', views.mutter, name="mutter"),
     path('familie/', views.familie, name="familie"),
+    path('muetter/', views.muetter, name="muetter"),
     path('familie/kind/<str:name>', views.kind_detail, name="kind_detail"),
 ]
