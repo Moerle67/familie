@@ -23,5 +23,16 @@ def mutter(request, id):
         return HttpResponse("Ach komm, die Mutter gib es garnicht")
 
 def familie(request):
-    return render(request, 'app1/temp1.html')
+    liste_kinder = Kind.objects.all()
+    contents = {
+        'liste_kinder': liste_kinder,
+    }
+    return render(request, 'app1/temp1.html', contents)
+    
+def kind_detail(request, name):
+    kind = Kind.objects.get(pk=name)
+    contents = {
+        'kind': kind,
+    }
+    return render(request, 'app1/kind_detail.html', contents)
     

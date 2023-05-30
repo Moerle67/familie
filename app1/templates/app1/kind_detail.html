@@ -1,0 +1,10 @@
+{% extends 'app1/vorlage.html' %}
+
+{% block h1 %}Kind Detail {{kind.name}}{% endblock h1 %}
+
+{% block contents %}
+<p> Name: {{kind.name}} </p>
+<p> Name der Mutter: {{kind.mutter.name}}</p>
+<p> Name des Vaters: {{kind.mutter.gatte.name}}</p>
+<p> Notenschnitt: {{kind.noten}}</p>
+{% endblock contents %}

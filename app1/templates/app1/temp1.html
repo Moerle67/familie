@@ -1,1 +1,14 @@
 {% extends 'app1/vorlage.html' %}
+
+{% block h1 %}Kinderliste{% endblock h1 %}
+
+{% block contents %}
+<ul>
+{% for kind in liste_kinder %}
+    <li><a href="kind/{{kind.pk}}" target="_blank">{{kind}}</a></li>
+{% endfor %}
+</ul>
+{% endblock contents %}
+
+
+
