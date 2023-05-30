@@ -22,4 +22,6 @@ def mutter(request, id):
     else:
         return HttpResponse("Ach komm, die Mutter gib es garnicht")
 
+def familie(request):
+    return render(request, 'app1/temp1.html')
     
