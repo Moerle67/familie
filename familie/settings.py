@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7^0ogbzgtqmkw0d@^foq+(f70m*cmdcvmk6l$j(s#jt#74!37o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['familie2.onrender.com']
+ALLOWED_HOSTS = ['familie2.onrender.com', '127.0.0.1']
 
 
 # Application definition
@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'familie.urls'
@@ -117,7 +118,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / 'productionfiles'
+
 STATIC_URL = 'static/'
+
 # STATIC_ROOT = BASE_DIR / 'static'
 
 # STATIC_ROOT = os.path.join(BASE_DIR, "../static/")
@@ -127,5 +131,3 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import mimetypes
-mimetypes.add_type("text/css", ".css", True)
